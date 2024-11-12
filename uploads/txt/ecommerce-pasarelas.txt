@@ -1,0 +1,21 @@
+Cuando vas a cobrar online en un ecommerce o sitio web de comercio electrónico, hay 3 grandes opciones para vender:
+
+1. Full Automatico:
+Esta opcion es la más utilizada, rapida y económica. Es la opcion en donde los clientes pueden generar una boleta o cupón de pago y pagarlo las 24 horas, sin necesidad de la intervencion de ningún administrador de la tienda.
+El beneficio principal es que una vez realizado el pago, el sistema donde el cliente paga, le informa al ecommerce, que el cupón específico de esa persona ha sido pagado y el pedido automáticamente es marcado como pagado.
+En caso de tiendas de venta digitales como pdf, cursos, etc. la persona automáticamente ya tendrá acceso a lo que compro, (descargas, pdf, etc) lo cual es un beneficio porque si la persona compro de madrugada por ejemplo, ya puede descargarlo.
+En el caso de las tiendas de productos físicos, al otro día el titular de la tienda, solo verifica y entrega los productos pagos.
+Este metodo de pago no es exclusivo de tarjetas, también existen otras pasarelas que cobran en efectivo, pero identifican el cupón de pago y lo acreditan automáticamente en su tienda cuando ese pago ingresa.
+Pueded ser Oxxo, Pagofacil, Redpagos, y asi en varios paises hay métodos de pago en efectivo, pero sincronizados con la tienda.
+
+2. Semi Automatico:
+Esta opcion con cada compra la persona puede generar un cupón y pagar, pero no hay retorno de la pasarela para informar que el pago fue realizado.
+Por ello el pedido quedará pendiente en el carrito, hasta que el cliente lo informe y  un administrador verifique y cambie manualmente el pedido de pendiente ha pagado.
+Esto puede ser una pasarela que informe por email que el pago ingresó, o inclusive puede ser un depósito bancario, transferencia o cualquier metodo que el cliente deba notificar el pago y que el administrador lo ingrese manualmente.
+
+Hasta aquí en el caso 1 y caso 2 , si es el caso de tiendas de productos físicos, es importante tener en cuenta que el stock de sus productos este actualizado, porque la generación del cupón y el pago es garantía de que recibiré ese producto, por ello cualquier producto en venta, debo tener stock.
+
+3. Manual sin cobro:
+En esta opcion la persona no puede pagar sin la aprobación del administrador de la tienda.
+Si bien está el catálogo completo, y la persona puede realizar mediante el carrito la confirmación de una compra, no hay pasarela, es decir que el cliente está confirmando lo que desea comprar y el titular de la tienda, fuera de línea, se comunicará con el potencial cliente para coordinar pago y entrega.
+Se usa el carrito para hacer catálogo, mostrar precios y automatizar los pedidos, pero no se cobra online.
