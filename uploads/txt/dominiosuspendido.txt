@@ -1,0 +1,13 @@
+Recuerde que los dominios .com .net o cualquier extensión, es una dirección o camino que hacen las computadoras para llegar al servidor donde está su web.
+
+En su caso su web, hosting o servicio están funcionando bien, pero su dominio está suspendido.
+
+Porque está suspendido?
+
+De acuerdo con las regulaciones de internet que no podemos manejar, muchas veces se envía AUTOMÁTICAMENTE y sin nuestro control correos electrónicos de verificación, al titular del dominio para verificar que no sea un robot quien registró el dominio.
+
+Con solo hacerle clic al vinculo que figura en ese correo para verificar el dominio, el trámite está finalizado y el dominio se des-suspende automáticamente. Luego de 2 horas de verificado, el dominio vuelve a activarse llevando el trafico nuevamente hacia el servidor.
+
+Repetimos. Esto no es algo nuestro ni que hemos hecho nosotros, sino de la empresa reguladora de .com en Estados Unidos, que lo hace con millones de dominios por día.
+
+Debajo le paso cual es la dirección de e-mail que figura como titular del dominio para que abra esa casilla, y un ejemplo del modelo de correo que usted debe buscar para hacer clic.
