@@ -1,0 +1,24 @@
+El servicio de WEBTV le permite subir archivos de video, novelas, peliculas o lo que desee en mp4 al servidor de video.
+
+Hay 2 modalidades. El Video Streaming en vivo, Consiste en transmitir desde su computadora una señal hacia nuestro servidor de video.
+y Webtv lo llamamos a reproducir videos directamente desde la nueve, desde nuestro servidor, sin usar pc.
+ 
+Así con WEBTV, el servidor podra transmitir el video las 24 horas sin necesidad de que usted tenga ningun dispositivo prendido.
+
+Es muy simple y se hace en 3 simples pasos en un navegador web conectado a nuestro Panel de video.
+
+PASO UNO.  Hace una lista de reproduccion con un nombre a su eleccion, por ejemplo Lista Musicales de los 80.
+PASO DOS.  Sube todos los videos mp4 que desee al servidor facilmente desde un navegador o mediante FTP si es desea.
+PASO TRES. Luego elije a cual lista pertenece los videos subidos y se programa los horarios para cada lista.
+
+Por ejemplo, de 10 a 11 am se reproducira la lista Musicales de los 80; y de 11 a 13 reproduciremos la lista Lectura de La biblia.
+
+Listo!! Su canal de tv ya esta online y transmitiendo las 24 horas, si necesidad de tener pc, ni nada prendido.
+
+Su video podrá ser visto en un sitio web, una aplicación android, una aplicación IPHONE, o un simple link para que pueda ser usado por otros dispositivos o medios de comunicación.
+
+y También podrá reenviar esa señal hacia sus cuentas de diferentes redes sociales como Facebook, Youtube, Twitch etc.
+
+Si usted cuenta con un sitio web, le daremos reproductores de video para incluir en su web y que se vea su video. Si no consta con ninguna web, todos nuestros planes de RadioNube, incluyen un sitio web con su logo y estética, así como el reproductor de video.
+
+Que estas esperando? Comienza ya mismo con tu VIDEO STREAMING y que el mundo te vea!!
