@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esquema de Facturación Acompañante Terapéutico</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .timeline-line {
+            background: repeating-linear-gradient(90deg, #e5e7eb, #e5e7eb 10px, transparent 10px, transparent 20px);
+        }
+        .step-card {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 min-h-screen p-4 md:p-8 font-sans">
+
+    <div class="max-w-5xl mx-auto">
+        <!-- Header -->
+        <header class="text-center mb-12">
+            <h1 class="text-3xl font-bold text-slate-800 mb-2">Ejemplo de Esquema de Cobro y Facturación</h1>
+            <p class="text-slate-600 max-w-2xl mx-auto">
+                Visualización del ciclo de pagos: Adelantos de viáticos y facturación de servicios a 60 días.
+            </p>
+        </header>
+
+        <!-- Main Timeline Container -->
+        <div class="relative">
+            <!-- Central Line -->
+            <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-blue-100 rounded-full"></div>
+
+            <!-- Mes 1: Inicio -->
+            <div class="relative mb-12 md:flex items-center justify-between">
+                <div class="md:w-5/12 mb-4 md:mb-0">
+                    <div class="step-card bg-white p-6 rounded-2xl border-l-4 border-blue-500 shadow-sm">
+                        <span class="text-xs font-bold uppercase tracking-wider text-blue-500">Comienza la A.T.</span>
+                        <h3 class="text-xl font-bold text-slate-800 mt-1">Día x (Mes 1): Inicio</h3>
+                        <p class="text-slate-600 mt-2">Si comienza a ir antes del 15, es 1 mes completo. Sino se cuenta medio mes</p>
+                        <div class="mt-4 inline-flex items-center text-sm font-medium text-blue-700 bg-blue-50 px-3 py-1 rounded-full">
+                            Carpeta Presentada ✅
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-10 h-10 bg-blue-500 rounded-full border-4 border-white items-center justify-center z-10">
+                    <span class="text-white font-bold">1</span>
+                </div>
+                <div class="md:w-5/12 text-right">
+                    <div class="text-sm font-semibold text-slate-400 uppercase tracking-widest">Mes 1 - Se comienza Trabajo de AT</div>
+                </div>
+            </div>
+
+            <!-- Mes 2: Adelanto -->
+            <div class="relative mb-12 md:flex items-center justify-between flex-row-reverse">
+                <div class="md:w-5/12 mb-4 md:mb-0">
+                    <div class="step-card bg-amber-50 p-6 rounded-2xl border-l-4 border-amber-400 shadow-sm">
+                        <span class="text-xs font-bold uppercase tracking-wider text-amber-600">Primer Cobro</span>
+                        <h3 class="text-xl font-bold text-slate-800 mt-1"> (Mes 2)</h3>
+                        <p class="text-slate-600 mt-2 font-medium">SI Factura de "Adelanto para Viáticos"</p>
+                        <p class="text-2xl font-bold text-amber-700 mt-2">$ 150.000</p>
+                    </div>
+                </div>
+                <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-10 h-10 bg-amber-400 rounded-full border-4 border-white items-center justify-center z-10">
+                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                </div>
+                <div class="md:w-5/12 text-left">
+                    <div class="text-sm font-semibold text-slate-400 uppercase tracking-widest">Mes 2</div>
+                </div>
+            </div>
+
+            <!-- Mes 3: 1er Factura Servicio -->
+            <div class="relative mb-12 md:flex items-center justify-between">
+                <div class="md:w-5/12 mb-4 md:mb-0">
+                    <div class="step-card bg-green-50 p-6 rounded-2xl border-l-4 border-green-500 shadow-sm">
+                        <span class="text-xs font-bold uppercase tracking-wider text-green-600">60 Días Post-Inicio</span>
+                        <h3 class="text-xl font-bold text-slate-800 mt-1">Hacer 1er Factura de Servicio (Mes 3)</h3>
+                        <p class="text-slate-600 mt-2"><strong>A tarifa de Nomenclador Mes 1:</strong>  </p>
+                        <p class="text-sm text-green-700 mt-2 italic font-medium">"Valor Trabajado - 150.000 de Adelanto ( por unica vez)"</p>
+                    </div>
+                </div>
+                <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-10 h-10 bg-green-500 rounded-full border-4 border-white items-center justify-center z-10">
+                    <span class="text-white font-bold">3</span>
+                </div>
+                <div class="md:w-5/12 text-right">
+                    <div class="text-sm font-semibold text-slate-400 uppercase tracking-widest">Mes 3</div>
+                </div>
+            </div>
+
+            <!-- Mes 4: 2da Factura Servicio -->
+            <div class="relative mb-12 md:flex items-center justify-between flex-row-reverse">
+                <div class="md:w-5/12 mb-4 md:mb-0">
+                    <div class="step-card bg-green-50 p-6 rounded-2xl border-l-4 border-green-400 shadow-sm">
+                        <span class="text-xs font-bold uppercase tracking-wider text-green-600">Continuidad Mensual</span>
+                        <h3 class="text-xl font-bold text-slate-800 mt-1">Hacer 2da Factura de Servicio (Mes 4)</h3>
+                        
+                        <p class="text-sm text-green-700 mt-1 italic">Valor del Nomenclador del Mes 2 , Mantenemos el desfasaje de 60 días.</p>
+                    </div>
+                </div>
+                <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-10 h-10 bg-green-400 rounded-full border-4 border-white items-center justify-center z-10">
+                    <span class="text-white font-bold">4</span>
+                </div>
+                <div class="md:w-5/12 text-left">
+                    <div class="text-sm font-semibold text-slate-400 uppercase tracking-widest">Mes 4</div>
+                </div>
+            </div>
+
+            <!-- Mes 5: 3ra Factura Servicio -->
+            <div class="relative mb-12 md:flex items-center justify-between">
+                <div class="md:w-5/12 mb-4 md:mb-0">
+                    <div class="step-card bg-green-50 p-6 rounded-2xl border-l-4 border-green-300 shadow-sm">
+                        <span class="text-xs font-bold uppercase tracking-wider text-green-600">Ciclo Estable</span>
+                        <h3 class="text-xl font-bold text-slate-800 mt-1">Hacer 3er Factura de Servicio (Mes 5)</h3>
+                        <p class="text-slate-600 mt-2"><strong>Valor del Nomenclador del Mes 3</strong> Mantenemos el desfasaje de 60 días..</p>
+                        <p class="text-sm text-green-700 mt-1">A partir de aquí, el flujo es constante todos los meses.</p>
+                    </div>
+                </div>
+                <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-10 h-10 bg-green-300 rounded-full border-4 border-white items-center justify-center z-10">
+                    <span class="text-white font-bold">5</span>
+                </div>
+                <div class="md:w-5/12 text-right">
+                    <div class="text-sm font-semibold text-slate-400 uppercase tracking-widest">Mes 5</div>
+                </div>
+            </div>
+
+            <!-- Continuity Indicator -->
+            <div class="relative mb-12 md:flex items-center justify-center">
+                <div class="bg-slate-100 px-6 py-3 rounded-full border border-slate-200 flex items-center space-x-3">
+                    <div class="flex -space-x-1">
+                        <div class="w-3 h-3 rounded-full bg-slate-400"></div>
+                        <div class="w-3 h-3 rounded-full bg-slate-400 ml-1"></div>
+                        <div class="w-3 h-3 rounded-full bg-slate-400 ml-1"></div>
+                    </div>
+                    <span class="text-sm font-medium text-slate-500 italic">Sigue igual hasta el cierre...</span>
+                </div>
+            </div>
+
+            <!-- Closure -->
+            <div class="relative mb-12 md:flex items-center justify-between flex-row-reverse">
+                <div class="md:w-5/12 mb-4 md:mb-0">
+                    <div class="step-card bg-indigo-50 p-6 rounded-2xl border-l-4 border-indigo-500 shadow-sm">
+                        <span class="text-xs font-bold uppercase tracking-wider text-indigo-600">Finalización</span>
+                        <h3 class="text-xl font-bold text-slate-800 mt-1">Cierre de Acompañamiento</h3>
+                        <p class="text-slate-600 mt-2">Se continúa facturando hasta <strong>2 meses después</strong> del fin del servicio real para cobrar los meses pendientes.</p>
+                        <div class="mt-4 p-3 bg-white rounded-lg border border-indigo-100 text-xs text-indigo-800">
+                            <strong>Nota Ciclo:</strong> En el nuevo ciclo se suele dejar Enero sin facturar.
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-10 h-10 bg-indigo-500 rounded-full border-4 border-white items-center justify-center z-10">
+                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                </div>
+                <div class="md:w-5/12 text-left">
+                    <div class="text-sm font-semibold text-slate-400">FIN SERVICIO + 60 Días</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Summary Table -->
+        <div class="mt-16 bg-white rounded-3xl p-6 md:p-10 shadow-xl border border-slate-100">
+            <h2 class="text-2xl font-bold text-slate-800 mb-6 text-center">Resumen del Flujo de Facturas</h2>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left">
+                    <thead>
+                        <tr class="text-slate-400 text-sm uppercase tracking-wider border-b border-slate-100">
+                            <th class="pb-4 font-semibold px-4">Fecha Factura</th>
+                            <th class="pb-4 font-semibold">Tipo</th>
+                            <th class="pb-4 font-semibold text-right px-4">Mes que se cobra</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-slate-700">
+                        <tr class="border-b border-slate-50 hover:bg-slate-50">
+                            <td class="py-4 px-4 font-medium italic">Inicia el 15/Mes 1</td>
+                            <td class="py-4 font-bold text-blue-500">TRÁMITE</td>
+                            <td class="py-4 text-right px-4">Presentación en Colegio</td>
+                        </tr>
+                        <tr class="border-b border-slate-50 hover:bg-slate-50">
+                            <td class="py-4 px-4">Día 5 / Mes 2</td>
+                            <td class="py-4"><span class="bg-amber-100 text-amber-700 px-2 py-1 rounded text-xs font-bold uppercase tracking-tighter">Adelanto Viáticos</span></td>
+                            <td class="py-4 text-right px-4">Primer Adelanto ($150.000)</td>
+                        </tr>
+                        <tr class="border-b border-slate-50 hover:bg-slate-50">
+                            <td class="py-4 px-4">Día 5 / Mes 3</td>
+                            <td class="py-4"><span class="bg-green-100 text-green-700 px-2 py-1 rounded text-xs font-bold uppercase tracking-tighter">Servicio AT</span></td>
+                            <td class="py-4 text-right px-4">Mes 1 (Servicio Prestado)</td>
+                        </tr>
+                        <tr class="border-b border-slate-50 hover:bg-slate-50">
+                            <td class="py-4 px-4">Día 5 / Mes 4</td>
+                            <td class="py-4"><span class="bg-green-100 text-green-700 px-2 py-1 rounded text-xs font-bold uppercase tracking-tighter">Servicio AT</span></td>
+                            <td class="py-4 text-right px-4">Mes 2 (Servicio Prestado)</td>
+                        </tr>
+                        <tr class="border-b border-slate-50 hover:bg-slate-50">
+                            <td class="py-4 px-4">Día 5 / Mes 5</td>
+                            <td class="py-4"><span class="bg-green-100 text-green-700 px-2 py-1 rounded text-xs font-bold uppercase tracking-tighter">Servicio AT</span></td>
+                            <td class="py-4 text-right px-4">Mes 3 (Servicio Prestado)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Footer Note -->
+        <footer class="mt-8 text-center text-slate-400 text-sm italic">
+            <p>Se factura a mes vencido + 30 días adicionales de demora técnica (Total 60 días).</p>
+        </footer>
+    </div>
+
+</body>
+</html>
