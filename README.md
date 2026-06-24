@@ -1,4 +1,4 @@
-# cdn
+# cdn UPLOADS solo mis uploads
 
 mi propio cdn
  son cosas subidas por https://gaac.vercel.app/
