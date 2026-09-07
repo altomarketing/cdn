@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Centro de Reportes</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Roboto, Arial, sans-serif;
+      background: #f4f6f8;
+      color: #202124;
+    }
+
+    .appbar {
+      padding: 24px;
+      background: #1976d2;
+      color: white;
+      box-shadow: 0 2px 8px rgba(0,0,0,.15);
+    }
+
+    .appbar-content {
+      max-width: 760px;
+      margin: auto;
+    }
+
+    .appbar h1 {
+      margin: 0;
+      font-size: 28px;
+      font-weight: 500;
+    }
+
+    .appbar p {
+      margin: 8px 0 0;
+      opacity: .9;
+      font-size: 15px;
+    }
+
+    .container {
+      max-width: 760px;
+      margin: 35px auto;
+      padding: 0 16px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 32px;
+      box-shadow: 0 4px 18px rgba(0,0,0,.10);
+    }
+
+    .info {
+      background: #e8f0fe;
+      padding: 16px;
+      border-radius: 8px;
+      margin-bottom: 28px;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .field {
+      margin-bottom: 22px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #444;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      border: 1px solid #c7c7c7;
+      border-radius: 6px;
+      padding: 14px;
+      font-size: 16px;
+      font-family: inherit;
+      outline: none;
+      transition: .2s;
+      background: white;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: #1976d2;
+      box-shadow: 0 0 0 3px rgba(25,118,210,.12);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 150px;
+    }
+
+    .button {
+      width: 100%;
+      border: 0;
+      border-radius: 6px;
+      background: #1976d2;
+      color: white;
+      padding: 15px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: .2s;
+      box-shadow: 0 3px 6px rgba(0,0,0,.15);
+    }
+
+    .button:hover {
+      background: #1565c0;
+    }
+
+    .button:disabled {
+      opacity: .65;
+      cursor: not-allowed;
+    }
+
+    #message {
+      display: none;
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    .success {
+      display: block !important;
+      background: #e6f4ea;
+      color: #137333;
+      border: 1px solid #b7dfc0;
+    }
+
+    .error {
+      display: block !important;
+      background: #fce8e6;
+      color: #c5221f;
+      border: 1px solid #f5c6c3;
+    }
+
+    .required {
+      color: #d93025;
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        padding: 22px;
+      }
+
+      .appbar h1 {
+        font-size: 23px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="appbar">
+    <div class="appbar-content">
+      <h1>Centro de Reportes</h1>
+      <p>Reporta errores, solicita funcionalidades o envíanos tus sugerencias.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="card">
+
+      <div class="info">
+        Tu reporte será enviado directamente a nuestro sistema de seguimiento.
+        No necesitas tener una cuenta de GitHub.
+      </div>
+
+      <form id="issueForm">
+
+        <div class="field">
+          <label for="type">
+            Tipo de solicitud <span class="required">*</span>
+          </label>
+
+          <select id="type" required>
+            <option value="">Selecciona una opción</option>
+            <option value="bug">🐛 Reportar un error</option>
+            <option value="feature">✨ Solicitar una funcionalidad</option>
+            <option value="suggestion">💡 Enviar una sugerencia</option>
+            <option value="question">❓ Realizar una consulta</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="name">
+            Tu nombre <span class="required">*</span>
+          </label>
+
+          <input
+            type="text"
+            id="name"
+            placeholder="Ej: Juan Pérez"
+            required
+          >
+        </div>
+
+        <div class="field">
+          <label for="email">
+            Correo electrónico <span class="required">*</span>
+          </label>
+
+          <input
+            type="email"
+            id="email"
+            placeholder="nombre@ejemplo.com"
+            required
+          >
+        </div>
+
+        <div class="field">
+          <label for="subject">
+            Asunto <span class="required">*</span>
+          </label>
+
+          <input
+            type="text"
+            id="subject"
+            placeholder="Resume brevemente tu reporte"
+            required
+          >
+        </div>
+
+        <div class="field">
+          <label for="description">
+            Descripción <span class="required">*</span>
+          </label>
+
+          <textarea
+            id="description"
+            placeholder="Explica el problema, solicitud o sugerencia con todos los detalles posibles..."
+            required
+          ></textarea>
+        </div>
+
+        <button type="submit" class="button" id="submitButton">
+          Enviar reporte
+        </button>
+
+        <div id="message"></div>
+
+      </form>
+
+    </div>
+  </main>
+
+<script>
+
+  /*
+   * CAMBIA ESTA URL
+   * Por la URL de tu Cloudflare Worker.
+   *
+   * Ejemplo:
+   * https://github-issues.tu-cuenta.workers.dev
+   */
+  const WORKER_URL = "https://report-issue.altomarketing.workers.dev";
+
+
+  const form = document.getElementById("issueForm");
+  const button = document.getElementById("submitButton");
+  const message = document.getElementById("message");
+
+
+  form.addEventListener("submit", async function(event) {
+
+    event.preventDefault();
+
+    message.className = "";
+    message.style.display = "none";
+
+    button.disabled = true;
+    button.textContent = "Enviando...";
+
+
+    const data = {
+      type: document.getElementById("type").value,
+      name: document.getElementById("name").value.trim(),
+      email: document.getElementById("email").value.trim(),
+      subject: document.getElementById("subject").value.trim(),
+      description: document.getElementById("description").value.trim()
+    };
+
+
+    try {
+
+      const response = await fetch(WORKER_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      });
+
+
+      const result = await response.json();
+
+
+      if (!response.ok || !result.success) {
+        throw new Error(
+          result.error || "No fue posible enviar el reporte."
+        );
+      }
+
+
+      message.textContent =
+        "✓ Tu reporte fue enviado correctamente. ¡Gracias por ayudarnos a mejorar!";
+
+      message.className = "success";
+
+      form.reset();
+
+
+    } catch (error) {
+
+      console.error(error);
+
+      message.textContent =
+        "✕ Ocurrió un error al enviar el reporte. Inténtalo nuevamente.";
+
+      message.className = "error";
+
+    }
+
+
+    button.disabled = false;
+    button.textContent = "Enviar reporte";
+
+  });
+
+</script>
+
+</body>
+</html>
