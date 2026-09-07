@@ -1,181 +1,411 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <title>Centro de Reportes</title>
 
+
   <style>
+
     * {
       box-sizing: border-box;
     }
 
+
     body {
+
       margin: 0;
+
       min-height: 100vh;
-      font-family: Roboto, Arial, sans-serif;
+
+      font-family:
+        Roboto,
+        Arial,
+        sans-serif;
+
       background: #f4f6f8;
+
       color: #202124;
+
     }
+
+
+    /* =========================
+       HEADER
+       ========================= */
 
     .appbar {
+
       padding: 24px;
+
       background: #1976d2;
+
       color: white;
-      box-shadow: 0 2px 8px rgba(0,0,0,.15);
+
+      box-shadow:
+        0 2px 8px rgba(0,0,0,.15);
+
     }
+
 
     .appbar-content {
+
       max-width: 760px;
+
       margin: auto;
+
     }
+
 
     .appbar h1 {
+
       margin: 0;
+
       font-size: 28px;
+
       font-weight: 500;
+
     }
+
 
     .appbar p {
+
       margin: 8px 0 0;
+
       opacity: .9;
+
       font-size: 15px;
+
     }
+
+
+    /* =========================
+       CONTENEDOR
+       ========================= */
 
     .container {
+
       max-width: 760px;
+
       margin: 35px auto;
+
       padding: 0 16px;
+
     }
+
+
+    /* =========================
+       CARD
+       ========================= */
 
     .card {
+
       background: white;
+
       border-radius: 12px;
+
       padding: 32px;
-      box-shadow: 0 4px 18px rgba(0,0,0,.10);
+
+      box-shadow:
+        0 4px 18px rgba(0,0,0,.10);
+
     }
+
+
+    /* =========================
+       INFO
+       ========================= */
 
     .info {
+
       background: #e8f0fe;
+
       padding: 16px;
+
       border-radius: 8px;
+
       margin-bottom: 28px;
+
       font-size: 14px;
+
       line-height: 1.5;
+
     }
+
+
+    /* =========================
+       CAMPOS
+       ========================= */
 
     .field {
+
       margin-bottom: 22px;
+
     }
 
+
     label {
+
       display: block;
+
       margin-bottom: 8px;
+
       font-size: 14px;
+
       font-weight: 500;
+
       color: #444;
+
     }
+
 
     input,
     select,
     textarea {
+
       width: 100%;
+
       border: 1px solid #c7c7c7;
+
       border-radius: 6px;
+
       padding: 14px;
+
       font-size: 16px;
+
       font-family: inherit;
+
       outline: none;
+
       transition: .2s;
+
       background: white;
+
     }
+
 
     input:focus,
     select:focus,
     textarea:focus {
+
       border-color: #1976d2;
-      box-shadow: 0 0 0 3px rgba(25,118,210,.12);
+
+      box-shadow:
+        0 0 0 3px
+        rgba(25,118,210,.12);
+
     }
+
 
     textarea {
+
       resize: vertical;
+
       min-height: 150px;
+
     }
+
+
+    /* =========================
+       BOTÓN
+       ========================= */
 
     .button {
+
       width: 100%;
+
       border: 0;
+
       border-radius: 6px;
+
       background: #1976d2;
+
       color: white;
+
       padding: 15px;
+
       font-size: 16px;
+
       font-weight: 600;
+
       cursor: pointer;
+
       transition: .2s;
-      box-shadow: 0 3px 6px rgba(0,0,0,.15);
+
+      box-shadow:
+        0 3px 6px
+        rgba(0,0,0,.15);
+
     }
+
 
     .button:hover {
+
       background: #1565c0;
+
     }
+
 
     .button:disabled {
+
       opacity: .65;
+
       cursor: not-allowed;
+
     }
+
+
+    /* =========================
+       MENSAJES
+       ========================= */
 
     #message {
+
       display: none;
+
       margin-top: 20px;
-      padding: 15px;
+
+      padding: 18px;
+
       border-radius: 8px;
+
       font-size: 14px;
+
+      line-height: 1.6;
+
     }
+
 
     .success {
+
       display: block !important;
+
       background: #e6f4ea;
+
       color: #137333;
+
       border: 1px solid #b7dfc0;
+
     }
+
 
     .error {
+
       display: block !important;
+
       background: #fce8e6;
+
       color: #c5221f;
+
       border: 1px solid #f5c6c3;
+
     }
 
+
     .required {
+
       color: #d93025;
+
     }
+
+
+    /* =========================
+       BOTÓN VER REPORTE
+       ========================= */
+
+    .issue-button {
+
+      display: inline-block;
+
+      padding: 13px 22px;
+
+      background: #1976d2;
+
+      color: white;
+
+      text-decoration: none;
+
+      border-radius: 6px;
+
+      font-weight: 600;
+
+      box-shadow:
+        0 2px 5px
+        rgba(0,0,0,.15);
+
+      transition: .2s;
+
+    }
+
+
+    .issue-button:hover {
+
+      background: #1565c0;
+
+    }
+
+
+    .small-text {
+
+      font-size: 13px;
+
+      opacity: .85;
+
+    }
+
+
+    /* =========================
+       MOBILE
+       ========================= */
 
     @media (max-width: 600px) {
 
       .card {
+
         padding: 22px;
+
       }
 
+
       .appbar h1 {
+
         font-size: 23px;
+
       }
 
     }
+
   </style>
+
 </head>
 
+
 <body>
+
+
+  <!-- =========================
+       HEADER
+       ========================= -->
 
   <header class="appbar">
 
     <div class="appbar-content">
 
-      <h1>Centro de Reportes</h1>
+      <h1>
+        Centro de Reportes
+      </h1>
 
       <p>
-        Reporta errores, solicita funcionalidades o envíanos tus sugerencias.
+        Reporta errores, solicita funcionalidades
+        o envíanos tus sugerencias.
       </p>
 
     </div>
@@ -183,22 +413,73 @@
   </header>
 
 
+  <!-- =========================
+       CONTENIDO
+       ========================= -->
+
   <main class="container">
+
 
     <div class="card">
 
+
       <div class="info">
 
-        
-        <strong>ATENCION</strong> Esto no es un formulario de consulta, es para pedir NUEVAS FUNCIONALIDADES a nuestros Desarollos, reportar fallas de funcionamiento, etc.
-        Tu reporte será enviado directamente a nuestro sistema de seguimiento.
-       No use el formulario para varios pedidos, uselo para cada pedido que desea hacer.
+     ATENCION Esto no es un formulario de consulta, es para pedir NUEVAS FUNCIONALIDADES a nuestros Desarollos, reportar fallas de funcionamiento, etc. Tu reporte será enviado directamente a nuestro sistema de seguimiento. No use el formulario para varios pedidos, uselo para cada pedido que desea hacer. 
 
       </div>
 
 
+      <!-- =========================
+           FORMULARIO
+           ========================= -->
+
       <form id="issueForm">
 
+
+        <!-- TIPO -->
+
+        <div class="field">
+
+          <label for="type">
+
+            Tipo de solicitud
+
+            <span class="required">
+              *
+            </span>
+
+          </label>
+
+
+          <select
+            id="type"
+            required
+          >
+
+            <option value="">
+              Selecciona una opción
+            </option>
+
+            <option value="bug">
+              🐛 Reportar un error
+            </option>
+
+            <option value="feature">
+              ✨ Solicitar una funcionalidad
+            </option>
+
+            <option value="suggestion">
+              💡 Enviar una sugerencia
+            </option>
+
+            <option value="question">
+              ❓ Realizar una consulta
+            </option>
+
+          </select>
+
+        </div>
 
 
         <!-- PRODUCTO -->
@@ -207,12 +488,19 @@
 
           <label for="product">
 
-            Producto <span class="required">*</span>
+            Producto
+
+            <span class="required">
+              *
+            </span>
 
           </label>
 
 
-          <select id="product" required>
+          <select
+            id="product"
+            required
+          >
 
             <option value="">
               Selecciona el producto
@@ -220,22 +508,25 @@
 
 
             <!--
-              AGREGA MÁS PRODUCTOS AQUÍ
+              PRODUCTOS
 
-              El value DEBE coincidir exactamente
-              con el nombre de la label de GitHub.
+              El VALUE debe coincidir
+              exactamente con la label
+              de GitHub.
             -->
 
 
             <option value="product: Facilweb">
               Facilweb
             </option>
-            <option value="product: Flashnews">
-              Flashnews
+              <option value="product: Flashnews">
+              Facilweb
             </option>
-            
 
-            <!-- EJEMPLOS
+
+            <!--
+
+            Para agregar otro producto:
 
             <option value="product: RadioNube">
               RadioNube
@@ -251,38 +542,6 @@
 
         </div>
 
-        <!-- TIPO DE ISSUE -->
-
-        <div class="field">
-
-          <label for="type">
-            Tipo de solicitud <span class="required">*</span>
-          </label>
-
-          <select id="type" required>
-
-            <option value="">
-              Selecciona una opción
-            </option>
-
-            <option value="bug">
-              🐛 Reportar un error
-            </option>
-
-            <option value="features">
-              ✨ Pedir funcionalidad
-            </option>
-
-            <option value="suggestion">
-              💡 Enviar una sugerencia
-            </option>
-
-            
-
-          </select>
-
-        </div>
-
 
         <!-- NOMBRE -->
 
@@ -290,38 +549,50 @@
 
           <label for="name">
 
-            Tu nombre <span class="required">*</span>
+            Tu nombre
+
+            <span class="required">
+              *
+            </span>
 
           </label>
+
 
           <input
             type="text"
             id="name"
             placeholder="Ej: Juan Pérez"
+            autocomplete="name"
             required
           >
 
         </div>
 
 
-        <!-- EMAIL 
+        <!-- EMAIL -->
 
         <div class="field">
 
           <label for="email">
 
-            Correo electrónico <span class="required">*</span>
+            Correo electrónico
+
+            <span class="required">
+              *
+            </span>
 
           </label>
+
 
           <input
             type="email"
             id="email"
             placeholder="nombre@ejemplo.com"
+            autocomplete="email"
             required
           >
 
-        </div>-->
+        </div>
 
 
         <!-- ASUNTO -->
@@ -330,9 +601,14 @@
 
           <label for="subject">
 
-            Asunto <span class="required">*</span>
+            Asunto
+
+            <span class="required">
+              *
+            </span>
 
           </label>
+
 
           <input
             type="text"
@@ -350,9 +626,14 @@
 
           <label for="description">
 
-            Descripción <span class="required">*</span>
+            Descripción
+
+            <span class="required">
+              *
+            </span>
 
           </label>
+
 
           <textarea
             id="description"
@@ -363,234 +644,517 @@
         </div>
 
 
+        <!-- BOTÓN -->
+
         <button
           type="submit"
           class="button"
           id="submitButton"
         >
+
           Enviar reporte
+
         </button>
 
+
+        <!-- MENSAJE -->
 
         <div id="message"></div>
 
 
       </form>
 
+
     </div>
+
 
   </main>
 
 
-<script>
+  <!-- =========================
+       JAVASCRIPT
+       ========================= -->
 
-  /*
-   * URL DE TU CLOUDFLARE WORKER
-   */
-
-  const WORKER_URL =
-    "https://report-issue.altomarketing.workers.dev";
+  <script>
 
 
-  const form =
-    document.getElementById("issueForm");
+    /*
+     * ==================================================
+     * IMPORTANTE
+     * ==================================================
+     *
+     * PON AQUÍ LA URL REAL DE TU CLOUDFLARE WORKER.
+     *
+     * Ejemplo:
+     *
+     * https://github-issues.tudominio.com
+     *
+     * o:
+     *
+     * https://github-issues.xxxxx.workers.dev
+     *
+     */
 
-  const button =
-    document.getElementById("submitButton");
-
-  const message =
-    document.getElementById("message");
-
-
-  form.addEventListener(
-    "submit",
-    async function(event) {
-
-      event.preventDefault();
-
-
-      message.className = "";
-
-      message.style.display = "none";
-
-
-      button.disabled = true;
-
-      button.textContent =
-        "Enviando...";
+    const WORKER_URL =
+      "https://report-issue.altomarketing.workers.dev";
 
 
-      /*
-       * OBTENER DATOS
-       */
+    /*
+     * ELEMENTOS
+     */
 
-      const data = {
-
-        type:
-          document
-            .getElementById("type")
-            .value,
-
-        product:
-          document
-            .getElementById("product")
-            .value,
-
-        name:
-          document
-            .getElementById("name")
-            .value
-            .trim(),
-
-        email:
-          document
-            .getElementById("email")
-            .value
-            .trim(),
-
-        subject:
-          document
-            .getElementById("subject")
-            .value
-            .trim(),
-
-        description:
-          document
-            .getElementById("description")
-            .value
-            .trim()
-
-      };
+    const form =
+      document.getElementById(
+        "issueForm"
+      );
 
 
-      try {
+    const button =
+      document.getElementById(
+        "submitButton"
+      );
 
 
-        const response =
-          await fetch(
-            WORKER_URL,
-            {
-
-              method: "POST",
-
-              headers: {
-
-                "Content-Type":
-                  "application/json"
-
-              },
-
-              body:
-                JSON.stringify(data)
-
-            }
-          );
+    const message =
+      document.getElementById(
+        "message"
+      );
 
 
-        const result =
-          await response.json();
+    /*
+     * FUNCIÓN PARA MOSTRAR MENSAJE
+     */
 
+    function showMessage(
+      html,
+      className
+    ) {
+
+      message.innerHTML = html;
+
+      message.className =
+        className;
+
+      message.style.display =
+        "block";
+
+    }
+
+
+    /*
+     * FORMULARIO
+     */
+
+    form.addEventListener(
+      "submit",
+      async function(event) {
+
+
+        event.preventDefault();
+
+
+        /*
+         * LIMPIAR MENSAJE
+         */
+
+        message.innerHTML = "";
+
+        message.className = "";
+
+        message.style.display =
+          "none";
+
+
+        /*
+         * DESACTIVAR BOTÓN
+         */
+
+        button.disabled =
+          true;
+
+        button.textContent =
+          "Enviando...";
+
+
+        /*
+         * DATOS
+         */
+
+        const data = {
+
+          type:
+            document
+              .getElementById("type")
+              .value
+              .trim(),
+
+          product:
+            document
+              .getElementById("product")
+              .value
+              .trim(),
+
+          name:
+            document
+              .getElementById("name")
+              .value
+              .trim(),
+
+          email:
+            document
+              .getElementById("email")
+              .value
+              .trim(),
+
+          subject:
+            document
+              .getElementById("subject")
+              .value
+              .trim(),
+
+          description:
+            document
+              .getElementById("description")
+              .value
+              .trim()
+
+        };
+
+
+        /*
+         * VALIDACIÓN LOCAL
+         */
 
         if (
-          !response.ok ||
-          !result.success
+          !data.type ||
+          !data.product ||
+          !data.name ||
+          !data.email ||
+          !data.subject ||
+          !data.description
         ) {
 
-          throw new Error(
-            result.error ||
-            "No fue posible enviar el reporte."
+          showMessage(
+            "Por favor completa todos los campos obligatorios.",
+            "error"
           );
+
+          button.disabled =
+            false;
+
+          button.textContent =
+            "Enviar reporte";
+
+          return;
 
         }
 
 
         /*
-         * ÉXITO
+         * TIMEOUT
+         *
+         * Si el Worker no responde
+         * después de 20 segundos,
+         * dejamos de mostrar
+         * ENVIANDO...
          */
 
-        
-message.innerHTML = `
-  <strong>🎉 ¡Gracias! Recibimos tu reporte</strong>
-
-  <br><br>
-
-  Tu solicitud fue registrada correctamente
-  con el número <strong>#${result.issue_number}</strong>.
-
-  <br><br>
-
-  Puedes guardar este enlace para consultar posteriormente
-  el estado de tu reporte y las respuestas de nuestro equipo.
-
-  <br><br>
-
-  <a
-    href="${result.issue_url}"
-    target="_blank"
-    rel="noopener noreferrer"
-    style="
-      display:inline-block;
-      padding:13px 22px;
-      background:#1976d2;
-      color:white;
-      text-decoration:none;
-      border-radius:6px;
-      font-weight:600;
-      box-shadow:0 2px 5px rgba(0,0,0,.15);
-    "
-  >
-    Consultar mi reporte ↗
-  </a>
-
-  <br><br>
-
-  <small>
-    💡 No necesitas crear una cuenta para consultar tu reporte.
-    Te recomendamos guardar este enlace.
-  </small>
-`;
-
-message.className = "success";
-
-form.reset();
- 
-/*
-         * FIN ÉXITO
-         */
+        const controller =
+          new AbortController();
 
 
-      }
-      catch(error) {
+        const timeout =
+          setTimeout(
+            function() {
 
+              controller.abort();
 
-        console.error(error);
-
-
-        message.textContent =
-          "✕ " +
-          (
-            error.message ||
-            "Ocurrió un error al enviar el reporte."
+            },
+            20000
           );
 
 
-        message.className =
-          "error";
+        try {
+
+
+          /*
+           * ENVIAR AL WORKER
+           */
+
+          const response =
+            await fetch(
+              WORKER_URL,
+              {
+
+                method: "POST",
+
+                headers: {
+
+                  "Content-Type":
+                    "application/json"
+
+                },
+
+                body:
+                  JSON.stringify(data),
+
+                signal:
+                  controller.signal
+
+              }
+            );
+
+
+          /*
+           * CANCELAR TIMEOUT
+           */
+
+          clearTimeout(timeout);
+
+
+          /*
+           * OBTENER RESPUESTA
+           */
+
+          const responseText =
+            await response.text();
+
+
+          let result;
+
+
+          try {
+
+            result =
+              JSON.parse(
+                responseText
+              );
+
+          }
+          catch {
+
+            throw new Error(
+              "El servidor devolvió una respuesta que no es válida."
+            );
+
+          }
+
+
+          /*
+           * ERROR DEL WORKER
+           */
+
+          if (
+            !response.ok ||
+            !result.success
+          ) {
+
+            throw new Error(
+
+              result.error ||
+              "No fue posible enviar el reporte."
+
+            );
+
+          }
+
+
+          /*
+           * COMPROBAR URL
+           */
+
+          if (
+            !result.issue_url
+          ) {
+
+            throw new Error(
+              "El reporte fue creado, pero no se recibió el enlace."
+            );
+
+          }
+
+
+          /*
+           * ÉXITO
+           */
+
+          showMessage(
+
+            `
+              <strong>
+                🎉 ¡Gracias! Recibimos tu reporte
+              </strong>
+
+              <br><br>
+
+              Tu solicitud fue registrada correctamente
+              con el número
+              <strong>
+                #${result.issue_number}
+              </strong>.
+
+              <br><br>
+
+              Puedes guardar este enlace para consultar
+              posteriormente el estado de tu reporte y
+              las respuestas de nuestro equipo.
+
+              <br><br>
+
+              <a
+                href="${result.issue_url}"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="issue-button"
+              >
+                Consultar mi reporte ↗
+              </a>
+
+              <br><br>
+
+              <span class="small-text">
+                💡 No necesitas crear una cuenta para
+                consultar tu reporte.
+                Te recomendamos guardar este enlace.
+              </span>
+            `,
+
+            "success"
+
+          );
+
+
+          /*
+           * LIMPIAR FORMULARIO
+           */
+
+          form.reset();
+
+
+        }
+        catch(error) {
+
+
+          /*
+           * CANCELAR TIMEOUT
+           */
+
+          clearTimeout(timeout);
+
+
+          console.error(
+            "Error:",
+            error
+          );
+
+
+          /*
+           * TIMEOUT
+           */
+
+          if (
+            error.name ===
+            "AbortError"
+          ) {
+
+            showMessage(
+
+              `
+                <strong>
+                  ⚠️ El servidor está tardando demasiado
+                </strong>
+
+                <br><br>
+
+                No recibimos respuesta después de
+                20 segundos.
+
+                <br><br>
+
+                Por favor, intenta nuevamente.
+              `,
+
+              "error"
+
+            );
+
+          }
+
+          else {
+
+
+            /*
+             * ERROR NORMAL
+             */
+
+            showMessage(
+
+              `
+                <strong>
+                  ❌ No pudimos enviar el reporte
+                </strong>
+
+                <br><br>
+
+                ${escapeHtml(
+                  error.message ||
+                  "Ocurrió un error inesperado."
+                )}
+
+                <br><br>
+
+                Por favor, intenta nuevamente.
+              `,
+
+              "error"
+
+            );
+
+          }
+
+        }
+
+
+        /*
+         * REACTIVAR BOTÓN
+         */
+
+        button.disabled =
+          false;
+
+        button.textContent =
+          "Enviar reporte";
 
 
       }
+    );
 
 
-      button.disabled = false;
+    /*
+     * SEGURIDAD
+     *
+     * Evita insertar directamente
+     * mensajes de error en HTML.
+     */
 
-      button.textContent =
-        "Enviar reporte";
+    function escapeHtml(text) {
 
+      const div =
+        document.createElement(
+          "div"
+        );
+
+      div.textContent =
+        text;
+
+      return div.innerHTML;
 
     }
-  );
 
-</script>
+
+  </script>
+
 
 </body>
 </html>
+```
