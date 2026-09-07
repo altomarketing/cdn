@@ -508,14 +508,55 @@
          * ÉXITO
          */
 
-        message.textContent =
-          "✓ Tu reporte fue enviado correctamente. ¡Gracias por ayudarnos a mejorar!  El resultado podras verlo y monitorear fechas etc en este link veni.link/desarollo";
+        
+message.innerHTML = `
+  <strong>🎉 ¡Gracias! Recibimos tu reporte</strong>
 
-        message.className =
-          "success";
+  <br><br>
 
+  Tu solicitud fue registrada correctamente
+  con el número <strong>#${result.issue_number}</strong>.
 
-        form.reset();
+  <br><br>
+
+  Puedes guardar este enlace para consultar posteriormente
+  el estado de tu reporte y las respuestas de nuestro equipo.
+
+  <br><br>
+
+  <a
+    href="${result.issue_url}"
+    target="_blank"
+    rel="noopener noreferrer"
+    style="
+      display:inline-block;
+      padding:13px 22px;
+      background:#1976d2;
+      color:white;
+      text-decoration:none;
+      border-radius:6px;
+      font-weight:600;
+      box-shadow:0 2px 5px rgba(0,0,0,.15);
+    "
+  >
+    Consultar mi reporte ↗
+  </a>
+
+  <br><br>
+
+  <small>
+    💡 No necesitas crear una cuenta para consultar tu reporte.
+    Te recomendamos guardar este enlace.
+  </small>
+`;
+
+message.className = "success";
+
+form.reset();
+ 
+/*
+         * FIN ÉXITO
+         */
 
 
       }
