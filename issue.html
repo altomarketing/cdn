@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -153,6 +154,7 @@
     }
 
     @media (max-width: 600px) {
+
       .card {
         padding: 22px;
       }
@@ -160,6 +162,7 @@
       .appbar h1 {
         font-size: 23px;
       }
+
     }
   </style>
 </head>
@@ -167,39 +170,127 @@
 <body>
 
   <header class="appbar">
+
     <div class="appbar-content">
+
       <h1>Centro de Reportes</h1>
-      <p>Reporta errores, solicita funcionalidades o envíanos tus sugerencias.</p>
+
+      <p>
+        Reporta errores, solicita funcionalidades o envíanos tus sugerencias.
+      </p>
+
     </div>
+
   </header>
 
+
   <main class="container">
+
     <div class="card">
 
       <div class="info">
+
         Tu reporte será enviado directamente a nuestro sistema de seguimiento.
         No necesitas tener una cuenta de GitHub.
+
       </div>
+
 
       <form id="issueForm">
 
+
+        <!-- TIPO DE ISSUE -->
+
         <div class="field">
+
           <label for="type">
             Tipo de solicitud <span class="required">*</span>
           </label>
 
           <select id="type" required>
-            <option value="">Selecciona una opción</option>
-            <option value="bug">🐛 Reportar un error</option>
-            <option value="feature">✨ Solicitar una funcionalidad</option>
-            <option value="suggestion">💡 Enviar una sugerencia</option>
-            <option value="question">❓ Realizar una consulta</option>
+
+            <option value="">
+              Selecciona una opción
+            </option>
+
+            <option value="bug">
+              🐛 Reportar un error
+            </option>
+
+            <option value="features">
+              ✨ Solicitar una funcionalidad
+            </option>
+
+            <option value="suggestion">
+              💡 Enviar una sugerencia
+            </option>
+
+            
+
           </select>
+
         </div>
 
+
+        <!-- PRODUCTO -->
+
         <div class="field">
+
+          <label for="product">
+
+            Producto <span class="required">*</span>
+
+          </label>
+
+
+          <select id="product" required>
+
+            <option value="">
+              Selecciona el producto
+            </option>
+
+
+            <!--
+              AGREGA MÁS PRODUCTOS AQUÍ
+
+              El value DEBE coincidir exactamente
+              con el nombre de la label de GitHub.
+            -->
+
+
+            <option value="product: Facilweb">
+              Facilweb
+            </option>
+            <option value="product: Flashnews">
+              Flashnews
+            </option>
+            
+
+            <!-- EJEMPLOS
+
+            <option value="product: RadioNube">
+              RadioNube
+            </option>
+
+            <option value="product: MiRadio.Link">
+              MiRadio.Link
+            </option>
+
+            -->
+
+          </select>
+
+        </div>
+
+
+        <!-- NOMBRE -->
+
+        <div class="field">
+
           <label for="name">
+
             Tu nombre <span class="required">*</span>
+
           </label>
 
           <input
@@ -208,11 +299,18 @@
             placeholder="Ej: Juan Pérez"
             required
           >
+
         </div>
 
+
+        <!-- EMAIL -->
+
         <div class="field">
+
           <label for="email">
+
             Correo electrónico <span class="required">*</span>
+
           </label>
 
           <input
@@ -221,11 +319,18 @@
             placeholder="nombre@ejemplo.com"
             required
           >
+
         </div>
 
+
+        <!-- ASUNTO -->
+
         <div class="field">
+
           <label for="subject">
+
             Asunto <span class="required">*</span>
+
           </label>
 
           <input
@@ -234,11 +339,18 @@
             placeholder="Resume brevemente tu reporte"
             required
           >
+
         </div>
 
+
+        <!-- DESCRIPCIÓN -->
+
         <div class="field">
+
           <label for="description">
+
             Descripción <span class="required">*</span>
+
           </label>
 
           <textarea
@@ -246,103 +358,198 @@
             placeholder="Explica el problema, solicitud o sugerencia con todos los detalles posibles..."
             required
           ></textarea>
+
         </div>
 
-        <button type="submit" class="button" id="submitButton">
+
+        <button
+          type="submit"
+          class="button"
+          id="submitButton"
+        >
           Enviar reporte
         </button>
 
+
         <div id="message"></div>
+
 
       </form>
 
     </div>
+
   </main>
+
 
 <script>
 
   /*
-   * CAMBIA ESTA URL
-   * Por la URL de tu Cloudflare Worker.
-   *
-   * Ejemplo:
-   * https://github-issues.tu-cuenta.workers.dev
+   * URL DE TU CLOUDFLARE WORKER
    */
-  const WORKER_URL = "https://report-issue.altomarketing.workers.dev";
+
+  const WORKER_URL =
+    "https://report-issue.altomarketing.workers.dev";
 
 
-  const form = document.getElementById("issueForm");
-  const button = document.getElementById("submitButton");
-  const message = document.getElementById("message");
+  const form =
+    document.getElementById("issueForm");
+
+  const button =
+    document.getElementById("submitButton");
+
+  const message =
+    document.getElementById("message");
 
 
-  form.addEventListener("submit", async function(event) {
+  form.addEventListener(
+    "submit",
+    async function(event) {
 
-    event.preventDefault();
-
-    message.className = "";
-    message.style.display = "none";
-
-    button.disabled = true;
-    button.textContent = "Enviando...";
+      event.preventDefault();
 
 
-    const data = {
-      type: document.getElementById("type").value,
-      name: document.getElementById("name").value.trim(),
-      email: document.getElementById("email").value.trim(),
-      subject: document.getElementById("subject").value.trim(),
-      description: document.getElementById("description").value.trim()
-    };
+      message.className = "";
+
+      message.style.display = "none";
 
 
-    try {
+      button.disabled = true;
 
-      const response = await fetch(WORKER_URL, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(data)
-      });
+      button.textContent =
+        "Enviando...";
 
 
-      const result = await response.json();
+      /*
+       * OBTENER DATOS
+       */
+
+      const data = {
+
+        type:
+          document
+            .getElementById("type")
+            .value,
+
+        product:
+          document
+            .getElementById("product")
+            .value,
+
+        name:
+          document
+            .getElementById("name")
+            .value
+            .trim(),
+
+        email:
+          document
+            .getElementById("email")
+            .value
+            .trim(),
+
+        subject:
+          document
+            .getElementById("subject")
+            .value
+            .trim(),
+
+        description:
+          document
+            .getElementById("description")
+            .value
+            .trim()
+
+      };
 
 
-      if (!response.ok || !result.success) {
-        throw new Error(
-          result.error || "No fue posible enviar el reporte."
-        );
+      try {
+
+
+        const response =
+          await fetch(
+            WORKER_URL,
+            {
+
+              method: "POST",
+
+              headers: {
+
+                "Content-Type":
+                  "application/json"
+
+              },
+
+              body:
+                JSON.stringify(data)
+
+            }
+          );
+
+
+        const result =
+          await response.json();
+
+
+        if (
+          !response.ok ||
+          !result.success
+        ) {
+
+          throw new Error(
+            result.error ||
+            "No fue posible enviar el reporte."
+          );
+
+        }
+
+
+        /*
+         * ÉXITO
+         */
+
+        message.textContent =
+          "✓ Tu reporte fue enviado correctamente. ¡Gracias por ayudarnos a mejorar!  El resultado podras verlo y monitorear fechas etc en este link veni.link/desarollo";
+
+        message.className =
+          "success";
+
+
+        form.reset();
+
+
+      }
+      catch(error) {
+
+
+        console.error(error);
+
+
+        message.textContent =
+          "✕ " +
+          (
+            error.message ||
+            "Ocurrió un error al enviar el reporte."
+          );
+
+
+        message.className =
+          "error";
+
+
       }
 
 
-      message.textContent =
-        "✓ Tu reporte fue enviado correctamente. ¡Gracias por ayudarnos a mejorar!";
+      button.disabled = false;
 
-      message.className = "success";
+      button.textContent =
+        "Enviar reporte";
 
-      form.reset();
-
-
-    } catch (error) {
-
-      console.error(error);
-
-      message.textContent =
-        "✕ Ocurrió un error al enviar el reporte. Inténtalo nuevamente.";
-
-      message.className = "error";
 
     }
-
-
-    button.disabled = false;
-    button.textContent = "Enviar reporte";
-
-  });
+  );
 
 </script>
 
 </body>
 </html>
+```
