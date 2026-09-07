@@ -10,177 +10,900 @@
 
   <title>Centro de Reportes</title>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+
+      font-family:
+        "Plus Jakarta Sans",
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+      background: #f5f7fb;
+      color: #172033;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font-family: inherit;
+    }
+
+
+    /* =========================
+       HEADER
+       ========================= */
+
+    .topbar {
+      width: 100%;
+      height: 70px;
+
+      background: #ffffff;
+
+      border-bottom: 1px solid #e8ebf2;
+
+      display: flex;
+      align-items: center;
+    }
+
+    .topbar-inner {
+      width: 100%;
+      max-width: 1100px;
+
+      margin: 0 auto;
+      padding: 0 24px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+
+      color: #151b2d;
+      font-size: 18px;
+      font-weight: 800;
+
+      text-decoration: none;
+    }
+
+    .brand-icon {
+      width: 36px;
+      height: 36px;
+
+      border-radius: 10px;
+
+      background: #635bff;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      color: white;
+      font-size: 18px;
+      font-weight: 800;
+
+      box-shadow:
+        0 5px 15px rgba(99, 91, 255, 0.25);
+    }
+
+    .brand span {
+      white-space: nowrap;
+    }
+
+
+    /* =========================
+       CONTENEDOR
+       ========================= */
+
+    .page {
+      width: 100%;
+      max-width: 900px;
+
+      margin: 0 auto;
+
+      padding:
+        48px 20px 70px;
+    }
+
+
+    /* =========================
+       TITULO
+       ========================= */
+
+    .page-header {
+      margin-bottom: 28px;
+    }
+
+    .page-header h1 {
+      margin: 0 0 10px;
+
+      color: #141a2a;
+
+      font-size: 30px;
+      line-height: 1.2;
+
+      font-weight: 800;
+
+      letter-spacing: -0.7px;
+    }
+
+    .page-header p {
+      margin: 0;
+
+      max-width: 680px;
+
+      color: #6b7285;
+
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+
+    /* =========================
+       CARD
+       ========================= */
+
+    .card {
+      background: #ffffff;
+
+      border: 1px solid #e8ebf2;
+
+      border-radius: 16px;
+
+      box-shadow:
+        0 8px 30px rgba(25, 35, 55, 0.06);
+
+      overflow: hidden;
+    }
+
+    .card-header {
+      padding: 25px 30px;
+
+      border-bottom: 1px solid #edf0f5;
+
+      background: #ffffff;
+    }
+
+    .card-header h2 {
+      margin: 0 0 6px;
+
+      font-size: 17px;
+      font-weight: 700;
+
+      color: #171d2e;
+    }
+
+    .card-header p {
+      margin: 0;
+
+      color: #7a8293;
+
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .card-body {
+      padding: 30px;
+    }
+
+
+    /* =========================
+       INFO
+       ========================= */
+
+    .info-box {
+      display: flex;
+      gap: 13px;
+
+      padding: 16px 17px;
+
+      margin-bottom: 28px;
+
+      background: #f5f7ff;
+
+      border: 1px solid #e2e5ff;
+
+      border-radius: 11px;
+
+      color: #4b5567;
+
+      font-size: 13px;
+
+      line-height: 1.65;
+    }
+
+    .info-icon {
+      flex-shrink: 0;
+
+      width: 27px;
+      height: 27px;
+
+      border-radius: 8px;
+
+      background: #635bff;
+
+      color: white;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .info-box strong {
+      display: block;
+
+      margin-bottom: 2px;
+
+      color: #30384b;
+
+      font-weight: 700;
+    }
+
+
+    /* =========================
+       FORMULARIO
+       ========================= */
+
+    .form-grid {
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 22px 20px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    .field label {
+      margin-bottom: 8px;
+
+      color: #303749;
+
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .required {
+      color: #ef4444;
+    }
+
+
+    /* =========================
+       INPUTS
+       ========================= */
+
+    .field input,
+    .field select,
+    .field textarea {
+
+      width: 100%;
+
+      border: 1px solid #dfe3eb;
+
+      border-radius: 9px;
+
+      background: #ffffff;
+
+      color: #1c2333;
+
+      font-size: 14px;
+
+      outline: none;
+
+      transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+    }
+
+    .field input,
+    .field select {
+      height: 46px;
+
+      padding: 0 14px;
+    }
+
+    .field textarea {
+      min-height: 160px;
+
+      padding: 13px 14px;
+
+      resize: vertical;
+
+      line-height: 1.6;
+    }
+
+    .field input::placeholder,
+    .field textarea::placeholder {
+      color: #a0a7b5;
+    }
+
+    .field input:hover,
+    .field select:hover,
+    .field textarea:hover {
+      border-color: #cbd1dc;
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+
+      border-color: #635bff;
+
+      box-shadow:
+        0 0 0 3px rgba(99, 91, 255, 0.10);
+    }
+
+
+    /* =========================
+       SELECT
+       ========================= */
+
+    .field select {
+      cursor: pointer;
+    }
+
+
+    /* =========================
+       BOTON
+       ========================= */
+
+    .actions {
+      display: flex;
+
+      justify-content: flex-end;
+
+      margin-top: 26px;
+
+      padding-top: 25px;
+
+      border-top: 1px solid #edf0f5;
+    }
+
+    .submit-button {
+
+      min-width: 165px;
+      height: 46px;
+
+      padding: 0 22px;
+
+      border: 0;
+
+      border-radius: 9px;
+
+      background: #635bff;
+
+      color: #ffffff;
+
+      font-size: 13px;
+      font-weight: 700;
+
+      cursor: pointer;
+
+      transition:
+        transform 0.15s ease,
+        box-shadow 0.2s ease,
+        opacity 0.2s ease;
+    }
+
+    .submit-button:hover:not(:disabled) {
+
+      transform: translateY(-1px);
+
+      box-shadow:
+        0 7px 18px rgba(99, 91, 255, 0.25);
+    }
+
+    .submit-button:active:not(:disabled) {
+      transform: translateY(0);
+    }
+
+    .submit-button:disabled {
+      cursor: wait;
+      opacity: 0.65;
+    }
+
+
+    /* =========================
+       MENSAJE
+       ========================= */
+
+    .message {
+      margin-top: 22px;
+
+      padding: 20px;
+
+      border-radius: 11px;
+
+      font-size: 13px;
+
+      line-height: 1.7;
+    }
+
+    .message.success {
+      background: #f0fdf7;
+
+      border: 1px solid #c7f0dd;
+
+      color: #166534;
+    }
+
+    .message.error {
+      background: #fff5f5;
+
+      border: 1px solid #f5cccc;
+
+      color: #991b1b;
+    }
+
+    .message strong {
+      font-weight: 800;
+    }
+
+    .message a {
+      display: inline-flex;
+
+      align-items: center;
+
+      min-height: 40px;
+
+      padding: 0 16px;
+
+      margin-top: 2px;
+
+      border-radius: 8px;
+
+      background: #635bff;
+
+      color: white;
+
+      text-decoration: none;
+
+      font-size: 13px;
+
+      font-weight: 700;
+    }
+
+    .message a:hover {
+      opacity: 0.9;
+    }
+
+    .message small {
+      color: inherit;
+
+      opacity: 0.8;
+
+      font-size: 12px;
+    }
+
+
+    /* =========================
+       FOOTER
+       ========================= */
+
+    .footer {
+      margin-top: 25px;
+
+      text-align: center;
+
+      color: #9299a8;
+
+      font-size: 11px;
+    }
+
+
+    /* =========================
+       RESPONSIVE
+       ========================= */
+
+    @media (max-width: 700px) {
+
+      .topbar {
+        height: 62px;
+      }
+
+      .topbar-inner {
+        padding: 0 17px;
+      }
+
+      .page {
+        padding:
+          30px 14px 50px;
+      }
+
+      .page-header h1 {
+        font-size: 25px;
+      }
+
+      .page-header p {
+        font-size: 14px;
+      }
+
+      .card {
+        border-radius: 13px;
+      }
+
+      .card-header {
+        padding: 21px;
+      }
+
+      .card-body {
+        padding: 21px;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+
+        gap: 19px;
+      }
+
+      .field.full {
+        grid-column: auto;
+      }
+
+      .actions {
+        margin-top: 21px;
+        padding-top: 21px;
+      }
+
+      .submit-button {
+        width: 100%;
+      }
+
+    }
+
+
+    @media (max-width: 420px) {
+
+      .brand {
+        font-size: 16px;
+      }
+
+      .brand-icon {
+        width: 33px;
+        height: 33px;
+      }
+
+      .page-header h1 {
+        font-size: 23px;
+      }
+
+      .info-box {
+        padding: 13px;
+      }
+
+    }
+
+  </style>
 </head>
+
 
 <body>
 
-  <main>
 
-    <header>
-      <h1>Centro de Reportes</h1>
+  <!-- =========================
+       HEADER
+       ========================= -->
+
+  <header class="topbar">
+
+    <div class="topbar-inner">
+
+      <a
+        href="#"
+        class="brand"
+      >
+
+        <div class="brand-icon">
+          R
+        </div>
+
+        <span>
+          Centro de Reportes
+        </span>
+
+      </a>
+
+    </div>
+
+  </header>
+
+
+
+  <!-- =========================
+       CONTENIDO
+       ========================= -->
+
+  <main class="page">
+
+
+    <div class="page-header">
+
+      <h1>
+        ¿Necesitás ayuda?
+      </h1>
 
       <p>
-        Desde este formulario podés reportar errores,
-        solicitar funcionalidades, enviar sugerencias
-        o realizar consultas.
+        Enviá tu reporte, sugerencia o consulta y
+        nuestro equipo se encargará de revisarlo.
       </p>
-    </header>
 
-    <section>
+    </div>
 
-      <div>
-        <strong>ℹ️ Información</strong>
+
+
+    <section class="card">
+
+
+      <div class="card-header">
+
+        <h2>
+          Crear una solicitud
+        </h2>
 
         <p>
-          Tu solicitud será registrada automáticamente
-          en nuestro sistema de seguimiento.
-          No necesitás tener una cuenta de GitHub.
+          Completá los siguientes datos para registrar
+          tu solicitud.
         </p>
+
       </div>
 
-      <form id="reportForm">
 
-        <!-- Tipo de solicitud -->
-        <div>
-          <label for="type">
-            Tipo de solicitud
-          </label>
 
-          <select id="type" name="type" required>
-            <option value="">
-              Seleccioná una opción
-            </option>
+      <div class="card-body">
 
-            <option value="bug">
-              🐛 Reportar un error
-            </option>
 
-            <option value="feature">
-              ✨ Solicitar una funcionalidad
-            </option>
+        <div class="info-box">
 
-            <option value="suggestion">
-              💡 Enviar una sugerencia
-            </option>
+          <div class="info-icon">
+            i
+          </div>
 
-            <option value="question">
-              ❓ Realizar una consulta
-            </option>
-          </select>
+          <div>
+
+            <strong>
+              ¿Cómo funciona?
+            </strong>
+
+            Tu solicitud será registrada automáticamente
+            en nuestro sistema de seguimiento.
+            No necesitás tener una cuenta de GitHub.
+
+          </div>
+
         </div>
 
 
-        <!-- Producto -->
-        <div>
-          <label for="product">
-            Producto
-          </label>
 
-          <select id="product" name="product" required>
-            <option value="">
-              Seleccioná el producto
-            </option>
-
-            <option value="product: Facilweb">
-              Facilweb
-            </option>
-             <option value="product: Flashnews">
-              Facilweb
-            </option>
-             <option value="product: Otraweb">
-              Otraweb
-            </option>
-         
-            <!--
-              Para agregar nuevos productos:
-
-              <option value="product: RadioNube">
-                RadioNube
-              </option>
-
-              <option value="product: MiRadio.Link">
-                MiRadio.Link
-              </option>
-            -->
-          </select>
-        </div>
+        <form id="reportForm">
 
 
-        <!-- Nombre -->
-        <div>
-          <label for="name">
-            Nombre
-          </label>
-
-          <input
-            type="text"
-            id="name"
-            name="name"
-            placeholder="Tu nombre"
-            maxlength="100"
-            required
-          >
-        </div>
+          <div class="form-grid">
 
 
-        <!-- Asunto -->
-        <div>
-          <label for="subject">
-            Asunto
-          </label>
+            <!-- TIPO -->
 
-          <input
-            type="text"
-            id="subject"
-            name="subject"
-            placeholder="¿Cuál es el problema o solicitud?"
-            maxlength="200"
-            required
-          >
-        </div>
+            <div class="field">
 
+              <label for="type">
+                Tipo de solicitud
+                <span class="required">*</span>
+              </label>
 
-        <!-- Descripción -->
-        <div>
-          <label for="description">
-            Descripción
-          </label>
+              <select
+                id="type"
+                name="type"
+                required
+              >
 
-          <textarea
-            id="description"
-            name="description"
-            rows="8"
-            maxlength="10000"
-            placeholder="Describí detalladamente el problema, sugerencia o consulta..."
-            required
-          ></textarea>
-        </div>
+                <option value="">
+                  Seleccioná una opción
+                </option>
 
+                <option value="bug">
+                  🐛 Reportar un error
+                </option>
 
-        <!-- Botón -->
-        <button
-          type="submit"
-          id="submitButton"
-        >
-          Enviar reporte
-        </button>
+                <option value="feature">
+                  ✨ Solicitar una funcionalidad
+                </option>
 
-      </form>
+                <option value="suggestion">
+                  💡 Enviar una sugerencia
+                </option>
+
+                <option value="question">
+                  ❓ Realizar una consulta
+                </option>
+
+              </select>
+
+            </div>
 
 
-      <!-- Mensaje -->
-      <div
-        id="message"
-        hidden
-        role="alert"
-      ></div>
+
+            <!-- PRODUCTO -->
+
+            <div class="field">
+
+              <label for="product">
+                Producto
+                <span class="required">*</span>
+              </label>
+
+              <select
+                id="product"
+                name="product"
+                required
+              >
+
+                <option value="">
+                  Seleccioná el producto
+                </option>
+
+                <option value="product: Facilweb">
+                  Facilweb
+                </option>
+
+                <!--
+                Agregar nuevos productos acá:
+
+                <option value="product: RadioNube">
+                  RadioNube
+                </option>
+
+                <option value="product: MiRadio.Link">
+                  MiRadio.Link
+                </option>
+                -->
+
+              </select>
+
+            </div>
+
+
+
+            <!-- NOMBRE -->
+
+            <div class="field">
+
+              <label for="name">
+                Nombre
+                <span class="required">*</span>
+              </label>
+
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Tu nombre"
+                maxlength="100"
+                required
+              >
+
+            </div>
+
+
+
+            <!-- ASUNTO -->
+
+            <div class="field">
+
+              <label for="subject">
+                Asunto
+                <span class="required">*</span>
+              </label>
+
+              <input
+                type="text"
+                id="subject"
+                name="subject"
+                placeholder="Ej: No puedo ingresar al sistema"
+                maxlength="200"
+                required
+              >
+
+            </div>
+
+
+
+            <!-- DESCRIPCION -->
+
+            <div class="field full">
+
+              <label for="description">
+                Descripción
+                <span class="required">*</span>
+              </label>
+
+              <textarea
+                id="description"
+                name="description"
+                maxlength="10000"
+                placeholder="Contanos detalladamente qué sucede, qué esperabas que ocurriera y cualquier información que pueda ayudarnos a entender el problema..."
+                required
+              ></textarea>
+
+            </div>
+
+
+          </div>
+
+
+
+          <div class="actions">
+
+            <button
+              type="submit"
+              class="submit-button"
+              id="submitButton"
+            >
+              Enviar reporte
+            </button>
+
+          </div>
+
+
+        </form>
+
+
+
+        <div
+          id="message"
+          class="message"
+          hidden
+          role="alert"
+        ></div>
+
+
+      </div>
 
     </section>
 
+
+
+    <div class="footer">
+
+      Centro de Reportes · Atención y soporte
+
+    </div>
+
+
   </main>
+
 
 
 <script>
@@ -199,6 +922,7 @@
     document.getElementById("message");
 
 
+
   function escapeHtml(value) {
 
     return String(value)
@@ -211,15 +935,18 @@
   }
 
 
+
   function showMessage(html, type) {
 
     message.hidden = false;
 
+    message.className =
+      `message ${type}`;
+
     message.innerHTML = html;
 
-    message.dataset.type = type || "";
-
   }
+
 
 
   function hideMessage() {
@@ -229,6 +956,7 @@
     message.innerHTML = "";
 
   }
+
 
 
   form.addEventListener(
@@ -268,6 +996,7 @@
       const controller =
         new AbortController();
 
+
       const timeout =
         setTimeout(
           () => controller.abort(),
@@ -303,12 +1032,13 @@
 
         let result;
 
+
         try {
 
           result =
             JSON.parse(responseText);
 
-        } catch (jsonError) {
+        } catch (error) {
 
           throw new Error(
             "El servidor devolvió una respuesta inválida."
@@ -317,7 +1047,10 @@
         }
 
 
-        if (!response.ok || !result.success) {
+        if (
+          !response.ok ||
+          !result.success
+        ) {
 
           throw new Error(
             result.error ||
@@ -329,13 +1062,19 @@
 
 
         const issueNumber =
-          escapeHtml(result.issue_number);
+          escapeHtml(
+            result.issue_number
+          );
+
 
         const issueUrl =
-          escapeHtml(result.issue_url);
+          escapeHtml(
+            result.issue_url
+          );
 
 
         showMessage(
+
           `
             <strong>
               🎉 ¡Gracias! Recibimos tu reporte
@@ -349,7 +1088,7 @@
 
             <br><br>
 
-            Puedes guardar este enlace para consultar
+            Podés guardar este enlace para consultar
             posteriormente el estado de tu reporte y
             las respuestas de nuestro equipo.
 
@@ -366,23 +1105,35 @@
             <br><br>
 
             <small>
-              💡 No necesitas crear una cuenta para
+              💡 No necesitás crear una cuenta para
               consultar tu reporte.
               Te recomendamos guardar este enlace.
             </small>
           `,
+
           "success"
+
         );
 
 
         form.reset();
 
 
+        message.scrollIntoView({
+          behavior: "smooth",
+          block: "center"
+        });
+
+
       } catch (error) {
 
-        if (error.name === "AbortError") {
+
+        if (
+          error.name === "AbortError"
+        ) {
 
           showMessage(
+
             `
               <strong>
                 ⚠️ El servidor está tardando demasiado
@@ -394,12 +1145,15 @@
               Esperá unos instantes antes de intentar
               enviarlo nuevamente.
             `,
+
             "error"
+
           );
 
         } else {
 
           showMessage(
+
             `
               <strong>
                 ❌ No pudimos enviar el reporte
@@ -407,9 +1161,13 @@
 
               <br><br>
 
-              ${escapeHtml(error.message)}
+              ${escapeHtml(
+                error.message
+              )}
             `,
+
             "error"
+
           );
 
         }
@@ -429,6 +1187,7 @@
   );
 
 </script>
+
 
 </body>
 </html>
