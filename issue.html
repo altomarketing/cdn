@@ -47,7 +47,6 @@
       font-family: inherit;
     }
 
-
     /* =========================
        HEADER
        ========================= */
@@ -73,7 +72,6 @@
 
       display: flex;
       align-items: center;
-      justify-content: space-between;
     }
 
     .brand {
@@ -108,11 +106,6 @@
         0 5px 15px rgba(99, 91, 255, 0.25);
     }
 
-    .brand span {
-      white-space: nowrap;
-    }
-
-
     /* =========================
        CONTENEDOR
        ========================= */
@@ -123,10 +116,8 @@
 
       margin: 0 auto;
 
-      padding:
-        48px 20px 70px;
+      padding: 48px 20px 70px;
     }
-
 
     /* =========================
        TITULO
@@ -160,7 +151,6 @@
       line-height: 1.7;
     }
 
-
     /* =========================
        CARD
        ========================= */
@@ -182,8 +172,6 @@
       padding: 25px 30px;
 
       border-bottom: 1px solid #edf0f5;
-
-      background: #ffffff;
     }
 
     .card-header h2 {
@@ -208,6 +196,43 @@
       padding: 30px;
     }
 
+    /* =========================
+       CARGANDO
+       ========================= */
+
+    .loading {
+      text-align: center;
+
+      padding: 45px 20px;
+
+      color: #6b7285;
+
+      font-size: 14px;
+    }
+
+    .spinner {
+      width: 30px;
+      height: 30px;
+
+      margin: 0 auto 15px;
+
+      border: 3px solid #e8eaf0;
+
+      border-top-color: #635bff;
+
+      border-radius: 50%;
+
+      animation:
+        spin 0.8s linear infinite;
+    }
+
+    @keyframes spin {
+
+      to {
+        transform: rotate(360deg);
+      }
+
+    }
 
     /* =========================
        INFO
@@ -264,7 +289,6 @@
       font-weight: 700;
     }
 
-
     /* =========================
        FORMULARIO
        ========================= */
@@ -272,8 +296,7 @@
     .form-grid {
       display: grid;
 
-      grid-template-columns:
-        1fr 1fr;
+      grid-template-columns: 1fr 1fr;
 
       gap: 22px 20px;
     }
@@ -300,7 +323,6 @@
       color: #ef4444;
     }
 
-
     /* =========================
        INPUTS
        ========================= */
@@ -325,8 +347,7 @@
 
       transition:
         border-color 0.2s ease,
-        box-shadow 0.2s ease,
-        background 0.2s ease;
+        box-shadow 0.2s ease;
     }
 
     .field input,
@@ -367,15 +388,9 @@
         0 0 0 3px rgba(99, 91, 255, 0.10);
     }
 
-
-    /* =========================
-       SELECT
-       ========================= */
-
     .field select {
       cursor: pointer;
     }
-
 
     /* =========================
        BOTON
@@ -427,21 +442,19 @@
         0 7px 18px rgba(99, 91, 255, 0.25);
     }
 
-    .submit-button:active:not(:disabled) {
-      transform: translateY(0);
-    }
-
     .submit-button:disabled {
+
       cursor: wait;
+
       opacity: 0.65;
     }
 
-
     /* =========================
-       MENSAJE
+       ERROR
        ========================= */
 
     .message {
+
       margin-top: 22px;
 
       padding: 20px;
@@ -453,15 +466,8 @@
       line-height: 1.7;
     }
 
-    .message.success {
-      background: #f0fdf7;
-
-      border: 1px solid #c7f0dd;
-
-      color: #166534;
-    }
-
     .message.error {
+
       background: #fff5f5;
 
       border: 1px solid #f5cccc;
@@ -469,52 +475,187 @@
       color: #991b1b;
     }
 
-    .message strong {
+    /* =========================
+       ERROR DE CARGA
+       ========================= */
+
+    .load-error {
+
+      text-align: center;
+
+      padding: 45px 25px;
+    }
+
+    .load-error-icon {
+
+      font-size: 42px;
+
+      margin-bottom: 15px;
+    }
+
+    .load-error h3 {
+
+      margin: 0 0 10px;
+
+      color: #171d2e;
+
+      font-size: 18px;
+
       font-weight: 800;
     }
 
-    .message a {
-      display: inline-flex;
+    .load-error p {
 
-      align-items: center;
+      margin: 0 auto;
 
-      min-height: 40px;
+      max-width: 500px;
 
-      padding: 0 16px;
+      color: #6b7285;
 
-      margin-top: 2px;
+      font-size: 13px;
+
+      line-height: 1.7;
+    }
+
+    .retry-button {
+
+      margin-top: 20px;
+
+      min-height: 42px;
+
+      padding: 0 18px;
+
+      border: 0;
 
       border-radius: 8px;
 
       background: #635bff;
 
-      color: white;
+      color: #ffffff;
+
+      font-size: 13px;
+
+      font-weight: 700;
+
+      cursor: pointer;
+    }
+
+    /* =========================
+       EXITO
+       ========================= */
+
+    .success-screen {
+
+      text-align: center;
+
+      padding: 55px 30px 60px;
+    }
+
+    .success-icon {
+
+      width: 76px;
+      height: 76px;
+
+      margin: 0 auto 20px;
+
+      border-radius: 50%;
+
+      background: #ecfdf5;
+
+      border: 1px solid #c7f0dd;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      font-size: 38px;
+    }
+
+    .success-screen h2 {
+
+      margin: 0 0 14px;
+
+      color: #171d2e;
+
+      font-size: 25px;
+
+      line-height: 1.3;
+
+      font-weight: 800;
+    }
+
+    .success-screen p {
+
+      max-width: 600px;
+
+      margin: 0 auto 16px;
+
+      color: #6b7285;
+
+      font-size: 14px;
+
+      line-height: 1.75;
+    }
+
+    .success-screen .issue-number {
+
+      color: #635bff;
+
+      font-weight: 800;
+    }
+
+    .success-screen .issue-button {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      min-height: 46px;
+
+      padding: 0 22px;
+
+      margin: 12px 0 22px;
+
+      border-radius: 9px;
+
+      background: #635bff;
+
+      color: #ffffff;
 
       text-decoration: none;
 
       font-size: 13px;
 
       font-weight: 700;
+
+      box-shadow:
+        0 7px 18px rgba(99, 91, 255, 0.20);
     }
 
-    .message a:hover {
-      opacity: 0.9;
-    }
+    .success-screen small {
 
-    .message small {
-      color: inherit;
+      display: block;
 
-      opacity: 0.8;
+      max-width: 560px;
+
+      margin: 0 auto;
+
+      color: #9299a8;
 
       font-size: 12px;
-    }
 
+      line-height: 1.65;
+    }
 
     /* =========================
        FOOTER
        ========================= */
 
     .footer {
+
       margin-top: 25px;
 
       text-align: center;
@@ -523,7 +664,6 @@
 
       font-size: 11px;
     }
-
 
     /* =========================
        RESPONSIVE
@@ -565,6 +705,7 @@
       }
 
       .form-grid {
+
         grid-template-columns: 1fr;
 
         gap: 19px;
@@ -583,26 +724,12 @@
         width: 100%;
       }
 
-    }
-
-
-    @media (max-width: 420px) {
-
-      .brand {
-        font-size: 16px;
+      .success-screen {
+        padding: 40px 18px 45px;
       }
 
-      .brand-icon {
-        width: 33px;
-        height: 33px;
-      }
-
-      .page-header h1 {
-        font-size: 23px;
-      }
-
-      .info-box {
-        padding: 13px;
+      .success-screen h2 {
+        font-size: 22px;
       }
 
     }
@@ -614,9 +741,7 @@
 <body>
 
 
-  <!-- =========================
-       HEADER
-       ========================= -->
+  <!-- HEADER -->
 
   <header class="topbar">
 
@@ -642,10 +767,7 @@
   </header>
 
 
-
-  <!-- =========================
-       CONTENIDO
-       ========================= -->
+  <!-- CONTENIDO -->
 
   <main class="page">
 
@@ -664,11 +786,10 @@
     </div>
 
 
+    <section class="card" id="reportCard">
 
-    <section class="card">
 
-
-      <div class="card-header">
+      <div class="card-header" id="cardHeader">
 
         <h2>
           Crear una solicitud
@@ -682,217 +803,271 @@
       </div>
 
 
+      <div class="card-body" id="cardBody">
 
-      <div class="card-body">
 
+        <!-- ESTADO DE CARGA -->
 
-        <div class="info-box">
+        <div id="loading">
 
-          <div class="info-icon">
-            i
-          </div>
+          <div class="loading">
 
-          <div>
+            <div class="spinner"></div>
 
-            <strong>
-              ¿Cómo funciona?
-            </strong>
-
-            Tu solicitud será registrada automáticamente
-            en nuestro sistema de seguimiento.
-            No necesitás tener una cuenta de GitHub.
+            Cargando formulario...
 
           </div>
 
         </div>
 
 
+        <!-- FORMULARIO -->
 
-        <form id="reportForm">
+        <div id="formContainer" hidden>
 
+          <div class="info-box">
 
-          <div class="form-grid">
-
-
-            <!-- TIPO -->
-
-            <div class="field">
-
-              <label for="type">
-                Tipo de solicitud
-                <span class="required">*</span>
-              </label>
-
-              <select
-                id="type"
-                name="type"
-                required
-              >
-
-                <option value="">
-                  Seleccioná una opción
-                </option>
-
-                <option value="bug">
-                  🐛 Reportar un error
-                </option>
-
-                <option value="feature">
-                  ✨ Solicitar una funcionalidad
-                </option>
-
-                <option value="suggestion">
-                  💡 Enviar una sugerencia
-                </option>
-
-                <option value="question">
-                  ❓ Realizar una consulta
-                </option>
-
-              </select>
-
+            <div class="info-icon">
+              i
             </div>
 
+            <div>
 
+              <strong>
+                ¿Cómo funciona?
+              </strong>
 
-            <!-- PRODUCTO -->
-
-            <div class="field">
-
-              <label for="product">
-                Producto
-                <span class="required">*</span>
-              </label>
-
-              <select
-                id="product"
-                name="product"
-                required
-              >
-
-                <option value="">
-                  Seleccioná el producto
-                </option>
-
-                <option value="product: Facilweb">
-                  Facilweb
-                </option>
-
-                <!--
-                Agregar nuevos productos acá:
-
-                <option value="product: RadioNube">
-                  RadioNube
-                </option>
-
-                <option value="product: MiRadio.Link">
-                  MiRadio.Link
-                </option>
-                -->
-
-              </select>
+              Tu solicitud será registrada automáticamente
+              en nuestro sistema de seguimiento.
+              No necesitás tener una cuenta de GitHub.
 
             </div>
-
-
-
-            <!-- NOMBRE -->
-
-            <div class="field">
-
-              <label for="name">
-                Nombre
-                <span class="required">*</span>
-              </label>
-
-              <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="Tu nombre"
-                maxlength="100"
-                required
-              >
-
-            </div>
-
-
-
-            <!-- ASUNTO -->
-
-            <div class="field">
-
-              <label for="subject">
-                Asunto
-                <span class="required">*</span>
-              </label>
-
-              <input
-                type="text"
-                id="subject"
-                name="subject"
-                placeholder="Ej: No puedo ingresar al sistema"
-                maxlength="200"
-                required
-              >
-
-            </div>
-
-
-
-            <!-- DESCRIPCION -->
-
-            <div class="field full">
-
-              <label for="description">
-                Descripción
-                <span class="required">*</span>
-              </label>
-
-              <textarea
-                id="description"
-                name="description"
-                maxlength="10000"
-                placeholder="Contanos detalladamente qué sucede, qué esperabas que ocurriera y cualquier información que pueda ayudarnos a entender el problema..."
-                required
-              ></textarea>
-
-            </div>
-
 
           </div>
 
 
+          <form id="reportForm">
 
-          <div class="actions">
+
+            <div class="form-grid">
+
+
+              <!-- TIPO -->
+
+              <div class="field">
+
+                <label for="type">
+
+                  Tipo de solicitud
+
+                  <span class="required">*</span>
+
+                </label>
+
+
+                <select
+                  id="type"
+                  name="type"
+                  required
+                >
+
+                  <option value="">
+                    Seleccioná una opción
+                  </option>
+
+                  <option value="bug">
+                    🐛 Reportar un error
+                  </option>
+
+                  <option value="feature">
+                    ✨ Solicitar una funcionalidad
+                  </option>
+
+                  <option value="suggestion">
+                    💡 Enviar una sugerencia
+                  </option>
+
+                  <option value="question">
+                    ❓ Realizar una consulta
+                  </option>
+
+                </select>
+
+              </div>
+
+
+              <!-- PRODUCTO DINAMICO -->
+
+              <div class="field">
+
+                <label for="product">
+
+                  Producto
+
+                  <span class="required">*</span>
+
+                </label>
+
+
+                <select
+                  id="product"
+                  name="product"
+                  required
+                >
+
+                  <option value="">
+                    Seleccioná el producto
+                  </option>
+
+                </select>
+
+              </div>
+
+
+              <!-- NOMBRE -->
+
+              <div class="field">
+
+                <label for="name">
+
+                  Nombre
+
+                  <span class="required">*</span>
+
+                </label>
+
+
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Tu nombre"
+                  maxlength="100"
+                  autocomplete="name"
+                  required
+                >
+
+              </div>
+
+
+              <!-- ASUNTO -->
+
+              <div class="field">
+
+                <label for="subject">
+
+                  Asunto
+
+                  <span class="required">*</span>
+
+                </label>
+
+
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  placeholder="Ej: No puedo ingresar al sistema"
+                  maxlength="200"
+                  required
+                >
+
+              </div>
+
+
+              <!-- DESCRIPCION -->
+
+              <div class="field full">
+
+                <label for="description">
+
+                  Descripción
+
+                  <span class="required">*</span>
+
+                </label>
+
+
+                <textarea
+                  id="description"
+                  name="description"
+                  maxlength="10000"
+                  placeholder="Contanos detalladamente qué sucede, qué esperabas que ocurriera y cualquier información que pueda ayudarnos a entender el problema..."
+                  required
+                ></textarea>
+
+              </div>
+
+
+            </div>
+
+
+            <div class="actions">
+
+              <button
+                type="submit"
+                class="submit-button"
+                id="submitButton"
+              >
+
+                Enviar reporte
+
+              </button>
+
+            </div>
+
+
+          </form>
+
+
+          <div
+            id="message"
+            class="message"
+            hidden
+            role="alert"
+          ></div>
+
+        </div>
+
+
+        <!-- ERROR DE CARGA -->
+
+        <div
+          id="loadError"
+          hidden
+        >
+
+          <div class="load-error">
+
+            <div class="load-error-icon">
+              ⚠️
+            </div>
+
+            <h3>
+              No pudimos cargar el formulario
+            </h3>
+
+            <p id="loadErrorText">
+              No fue posible obtener la información
+              necesaria. Intentá nuevamente.
+            </p>
 
             <button
-              type="submit"
-              class="submit-button"
-              id="submitButton"
+              class="retry-button"
+              id="retryButton"
+              type="button"
             >
-              Enviar reporte
+              Intentar nuevamente
             </button>
 
           </div>
 
-
-        </form>
-
-
-
-        <div
-          id="message"
-          class="message"
-          hidden
-          role="alert"
-        ></div>
+        </div>
 
 
       </div>
 
     </section>
-
 
 
     <div class="footer">
@@ -908,9 +1083,35 @@
 
 <script>
 
+  /* =========================
+     CONFIGURACION
+     ========================= */
+
   const WORKER_URL =
     "https://report-issue.altomarketing.workers.dev";
 
+
+  /* =========================
+     ELEMENTOS
+     ========================= */
+
+  const loading =
+    document.getElementById("loading");
+
+  const formContainer =
+    document.getElementById("formContainer");
+
+  const loadError =
+    document.getElementById("loadError");
+
+  const loadErrorText =
+    document.getElementById("loadErrorText");
+
+  const retryButton =
+    document.getElementById("retryButton");
+
+  const productSelect =
+    document.getElementById("product");
 
   const form =
     document.getElementById("reportForm");
@@ -921,43 +1122,263 @@
   const message =
     document.getElementById("message");
 
+  const cardHeader =
+    document.getElementById("cardHeader");
 
+  const card =
+    document.getElementById("reportCard");
+
+
+  /* =========================
+     ESCAPAR HTML
+     ========================= */
 
   function escapeHtml(value) {
 
     return String(value)
+
       .replace(/&/g, "&amp;")
+
       .replace(/</g, "&lt;")
+
       .replace(/>/g, "&gt;")
+
       .replace(/"/g, "&quot;")
+
       .replace(/'/g, "&#039;");
 
   }
 
 
+  /* =========================
+     CARGAR PRODUCTOS
+     ========================= */
 
-  function showMessage(html, type) {
+  async function loadProducts() {
+
+    loading.hidden = false;
+
+    formContainer.hidden = true;
+
+    loadError.hidden = true;
+
+
+    try {
+
+
+      const controller =
+        new AbortController();
+
+
+      const timeout =
+        setTimeout(
+          () => controller.abort(),
+          15000
+        );
+
+
+      const response =
+        await fetch(
+          WORKER_URL,
+          {
+            method: "GET",
+
+            headers: {
+              "Accept":
+                "application/json"
+            },
+
+            signal:
+              controller.signal
+          }
+        );
+
+
+      clearTimeout(timeout);
+
+
+      const responseText =
+        await response.text();
+
+
+      let result;
+
+
+      try {
+
+        result =
+          JSON.parse(responseText);
+
+      } catch (error) {
+
+        throw new Error(
+          "El servidor devolvió una respuesta inválida."
+        );
+
+      }
+
+
+      if (
+        !response.ok ||
+        !result.success
+      ) {
+
+        throw new Error(
+          result.error ||
+          result.message ||
+          `Error del servidor (${response.status})`
+        );
+
+      }
+
+
+      if (
+        !Array.isArray(result.products)
+      ) {
+
+        throw new Error(
+          "El servidor no devolvió una lista de productos válida."
+        );
+
+      }
+
+
+      /* =========================
+         LIMPIAR SELECT
+         ========================= */
+
+      productSelect.innerHTML = "";
+
+
+      const defaultOption =
+        document.createElement("option");
+
+      defaultOption.value = "";
+
+      defaultOption.textContent =
+        "Seleccioná el producto";
+
+      defaultOption.disabled = false;
+
+      defaultOption.selected = true;
+
+      productSelect.appendChild(
+        defaultOption
+      );
+
+
+      /* =========================
+         AGREGAR PRODUCTOS
+         ========================= */
+
+      result.products.forEach(
+        function(product) {
+
+          const option =
+            document.createElement("option");
+
+          option.value =
+            product.label;
+
+          option.textContent =
+            product.name;
+
+          productSelect.appendChild(
+            option
+          );
+
+        }
+      );
+
+
+      /* =========================
+         VALIDAR PRODUCTOS
+         ========================= */
+
+      if (
+        result.products.length === 0
+      ) {
+
+        throw new Error(
+          "No hay productos configurados en este momento."
+        );
+
+      }
+
+
+      /* =========================
+         MOSTRAR FORMULARIO
+         ========================= */
+
+      loading.hidden = true;
+
+      formContainer.hidden = false;
+
+
+    } catch (error) {
+
+
+      loading.hidden = true;
+
+      formContainer.hidden = true;
+
+      loadError.hidden = false;
+
+
+      if (
+        error.name === "AbortError"
+      ) {
+
+        loadErrorText.textContent =
+          "La conexión está tardando demasiado. Verificá tu conexión e intentá nuevamente.";
+
+      } else {
+
+        loadErrorText.textContent =
+          error.message ||
+          "No fue posible cargar el formulario.";
+
+      }
+
+    }
+
+  }
+
+
+  /* =========================
+     REINTENTAR
+     ========================= */
+
+  retryButton.addEventListener(
+    "click",
+    function() {
+
+      loadProducts();
+
+    }
+  );
+
+
+  /* =========================
+     ESCAPAR MENSAJES
+     ========================= */
+
+  function showError(html) {
 
     message.hidden = false;
 
     message.className =
-      `message ${type}`;
+      "message error";
 
-    message.innerHTML = html;
-
-  }
-
-
-
-  function hideMessage() {
-
-    message.hidden = true;
-
-    message.innerHTML = "";
+    message.innerHTML =
+      html;
 
   }
 
 
+  /* =========================
+     ENVIAR FORMULARIO
+     ========================= */
 
   form.addEventListener(
     "submit",
@@ -965,7 +1386,9 @@
 
       event.preventDefault();
 
-      hideMessage();
+
+      message.hidden = true;
+
 
       submitButton.disabled = true;
 
@@ -976,19 +1399,32 @@
       const data = {
 
         type:
-          document.getElementById("type").value,
+          document
+            .getElementById("type")
+            .value,
 
         product:
-          document.getElementById("product").value,
+          document
+            .getElementById("product")
+            .value,
 
         name:
-          document.getElementById("name").value.trim(),
+          document
+            .getElementById("name")
+            .value
+            .trim(),
 
         subject:
-          document.getElementById("subject").value.trim(),
+          document
+            .getElementById("subject")
+            .value
+            .trim(),
 
         description:
-          document.getElementById("description").value.trim()
+          document
+            .getElementById("description")
+            .value
+            .trim()
 
       };
 
@@ -1006,15 +1442,19 @@
 
       try {
 
+
         const response =
           await fetch(
             WORKER_URL,
             {
+
               method: "POST",
 
               headers: {
+
                 "Content-Type":
                   "application/json"
+
               },
 
               body:
@@ -1022,6 +1462,7 @@
 
               signal:
                 controller.signal
+
             }
           );
 
@@ -1053,9 +1494,13 @@
         ) {
 
           throw new Error(
+
             result.error ||
+
             result.message ||
+
             `Error del servidor (${response.status})`
+
           );
 
         }
@@ -1073,56 +1518,92 @@
           );
 
 
-        showMessage(
+        /* =========================
+           OCULTAR FORMULARIO
+           ========================= */
 
-          `
-            <strong>
-              🎉 ¡Gracias! Recibimos tu reporte
-            </strong>
+        formContainer.innerHTML = "";
 
-            <br><br>
 
+        cardHeader.style.display =
+          "none";
+
+
+        /* =========================
+           MOSTRAR EXITO
+           ========================= */
+
+        const success =
+          document.createElement("div");
+
+        success.className =
+          "success-screen";
+
+
+        success.innerHTML = `
+
+          <div class="success-icon">
+            🎉
+          </div>
+
+          <h2>
+            ¡Gracias! Recibimos tu reporte
+          </h2>
+
+          <p>
             Tu solicitud fue registrada correctamente
             con el número
-            <strong>#${issueNumber}</strong>.
 
-            <br><br>
+            <span class="issue-number">
+              #${issueNumber}
+            </span>.
+          </p>
 
+          <p>
             Podés guardar este enlace para consultar
             posteriormente el estado de tu reporte y
             las respuestas de nuestro equipo.
+          </p>
 
-            <br><br>
+          <a
+            href="${issueUrl}"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="issue-button"
+          >
+            Consultar mi reporte ↗
+          </a>
 
-            <a
-              href="${issueUrl}"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Consultar mi reporte ↗
-            </a>
+          <small>
+            💡 No necesitás crear una cuenta para
+            consultar tu reporte.
+            <br>
+            Te recomendamos guardar este enlace.
+          </small>
 
-            <br><br>
+        `;
 
-            <small>
-              💡 No necesitás crear una cuenta para
-              consultar tu reporte.
-              Te recomendamos guardar este enlace.
-            </small>
-          `,
 
-          "success"
+        document
+          .getElementById("cardBody")
+          .appendChild(success);
 
+
+        /* =========================
+           SCROLL
+           ========================= */
+
+        setTimeout(
+          function() {
+
+            card.scrollIntoView({
+              behavior: "smooth",
+              block: "center"
+            });
+
+          },
+          100
         );
-
-
-        form.reset();
-
-
-        message.scrollIntoView({
-          behavior: "smooth",
-          block: "center"
-        });
 
 
       } catch (error) {
@@ -1132,45 +1613,38 @@
           error.name === "AbortError"
         ) {
 
-          showMessage(
+          showError(`
 
-            `
-              <strong>
-                ⚠️ El servidor está tardando demasiado
-              </strong>
+            <strong>
+              ⚠️ El servidor está tardando demasiado
+            </strong>
 
-              <br><br>
+            <br><br>
 
-              El reporte podría estar procesándose.
-              Esperá unos instantes antes de intentar
-              enviarlo nuevamente.
-            `,
+            El reporte podría estar procesándose.
+            Esperá unos instantes antes de intentar
+            enviarlo nuevamente.
 
-            "error"
-
-          );
+          `);
 
         } else {
 
-          showMessage(
+          showError(`
 
-            `
-              <strong>
-                ❌ No pudimos enviar el reporte
-              </strong>
+            <strong>
+              ❌ No pudimos enviar el reporte
+            </strong>
 
-              <br><br>
+            <br><br>
 
-              ${escapeHtml(
-                error.message
-              )}
-            `,
+            ${escapeHtml(
+              error.message
+            )}
 
-            "error"
-
-          );
+          `);
 
         }
+
 
       } finally {
 
@@ -1185,6 +1659,13 @@
 
     }
   );
+
+
+  /* =========================
+     INICIAR
+     ========================= */
+
+  loadProducts();
 
 </script>
 
