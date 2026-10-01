@@ -1,0 +1,12 @@
+Gracias por solicitar Soporte y configuracion Remota hacia su pc.
+Tres puntos antes de avanzar.
+Punto Uno. Tenga en cuenta que el servicio de soporte remoto solo guiamos en los manuales de nuestro servicio, pero No configuramos antivirus, drivers, placas de sonido, cables, etcétera. 
+Solo hacemos soporte remoto a PC con Windows, no Android, tablet, Mac, etcétera. 
+
+Punto Dos. Su Windows debe estar actualizado al día. Nos referimos a que debe ir a botón Inicio Windows Update y debe figurar que está al día. Esto actualiza drivers y el funcionamiento general del Windows. Si no hace esto, luego al actualizar el Windows puede anular nuestro trabajo. 
+
+Punto Tres. Su computadora debe tener todo lo necesario para poder hacer nuestro soporte remoto. 
+Es decir, por ejemplo,  si desea soporte remoto para configurar un email en su PC, debe tener listo el Outlook o el programa listo para poder configurarlo.
+Otro ejemplo, si desea que configuremos una Radio Streaming de audio, deberia tener los MP3 en su computadora que desea usar en su radio. 
+
+Si considera que tiene todo lo necesario para poder hacer el soporte, avance en el tutorial. Caso contrario, lo esperamos cuando guste volver.
